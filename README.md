@@ -137,10 +137,6 @@ The context path of the application is set to `/hello-world`, which means that t
 
 These commands will control the Tomcat server's operation.
 
-## License
-
-This project is licensed under the Apache License, Version 2.0. See the [LICENSE](https://www.apache.org/licenses/LICENSE-2.0) file for more details.
-
 ## Project Structure
 
 Please refer to `consoleOutput.txt` for more details. 😊
