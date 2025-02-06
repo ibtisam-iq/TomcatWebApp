@@ -1,12 +1,119 @@
 # Tomcat Web App
 
-## Overview
+## Project Overview
+This project is a Java-based web application that runs on Apache Tomcat. It follows a traditional servlet-JSP model instead of a modern Spring Boot or microservices approach.
 
-This is a simple web application built using the Tomcat server. It consists of a single servlet that handles HTTP requests and responds with a simple "Hello World!" message. 
+- **Backend Technology**: Java (Servlets & JSP)
+- **Frontend Technology**: JSP (Java Server Pages)
+- **Build Tool**: Maven (pom.xml)
+- **Application Server**: Apache Tomcat
+- **Folder Structure Type**: Monolithic (not fully 3-tier)
 
-The application is deployed as a WAR file, which is a standard format for Java web applications. The WAR file is then deployed to a Tomcat server using Jenkins, where it can be accessed via a web browser. 
+## Folder Structure Breakdown
 
-The context path of the application is set to `/hello-world`, which means that the application can be accessed at the URL `http://localhost:8080//hello-world`.
+```text
+.
+├── Banner.png
+├── consoleOutput.txt
+├── .gitignore
+├── logo.png
+├── pom.xml
+├── projectSnapshot.png
+├── README.md
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── example
+    │   │           ├── HelloWorldExample.java
+    │   │           └── Thing.java
+    │   └── webapp
+    │       ├── index.jsp
+    │       └── WEB-INF
+    │           └── web.xml
+    └── test
+        └── java
+            └── com
+                └── example
+                    └── ThingTest.java
+```
+
+## 1️⃣ Root Files
+
+| **File**             | **Purpose** |
+|----------------------|-------------|
+| `.gitignore`         | Excludes unnecessary files from Git tracking. |
+| `Banner.png`, `logo.png`, `projectSnapshot.png` | Image assets (used in documentation or app UI). |
+| `consoleOutput.txt`  | Likely contains runtime logs or console outputs. |
+| `pom.xml`            | Maven build file – defines dependencies, plugins, and project configuration. |
+| `README.md`          | Documentation explaining project setup and usage. |
+
+## 2️⃣ Backend (Java Code)
+
+**Path**: `src/main/java/com/example/`
+
+| **File**                | **Purpose** |
+|-------------------------|-------------|
+| `HelloWorldExample.java` | Likely a servlet that handles HTTP requests and responses. |
+| `Thing.java`             | A Java class (could be a model or helper utility). |
+
+## 3️⃣ Web Application Code (JSP & Configurations)
+
+**Path**: `src/main/webapp/`
+
+| **File**              | **Purpose** |
+|-----------------------|-------------|
+| `index.jsp`           | The main frontend page (JSP is Java embedded in HTML). |
+| `WEB-INF/web.xml`     | Deployment descriptor – defines servlet configurations, mappings, and security settings. |
+| **JSP files**: Unlike modern frontend frameworks (React, Angular, Vue), JSP allows dynamic content rendering using Java within HTML. |
+| **web.xml**: Essential for servlet-based applications, defining routing and configuration. |
+
+## 4️⃣ Testing
+
+**Path**: `src/test/java/com/example/`
+
+| **File**              | **Purpose** |
+|-----------------------|-------------|
+| `ThingTest.java`      | Likely a unit test for `Thing.java`, verifying backend logic. |
+
+## Analysis: Where Does This Project Fit?
+
+| **Feature**          | **Classification**           |
+|----------------------|------------------------------|
+| **Architecture**      | 2-tier (Monolithic Web App)  |
+| **Backend Framework** | Servlet-based (Traditional Java EE) |
+| **Frontend**          | JSP (Server-rendered UI, No React/Angular) |
+| **Application Server**| Tomcat (WAR deployment)      |
+| **Build System**      | Maven (pom.xml for dependency management) |
+
+## Comparison to Other Web Apps
+
+| **Project Type**                   | **Backend**        | **Frontend** | **Architecture**    |
+|-------------------------------------|--------------------|--------------|---------------------|
+| React + Node.js + MySQL             | Node.js (Express)  | React        | 3-tier              |
+| Spring Boot + React + MySQL         | Spring Boot        | React        | 3-tier              |
+| Flask + React + PostgreSQL          | Flask              | React        | 3-tier              |
+| **This Tomcat WebApp**              | Java Servlets      | JSP          | 2-tier (Monolithic) |
+
+## Conclusion
+
+✅ This project is a **2-tier**, **monolithic web application** running on Tomcat.  
+✅ It does not follow a modern **3-tier** (frontend, backend, database) separation.  
+✅ JSP and servlets are older but still used for small Java web applications.  
+
+If you want to modernize it, you could:
+- Replace JSP with **React/Vue.js**
+- Replace servlets with **Spring Boot** (REST API)
+
+## Brief Introduction
+
+This is a simple web application built using the Tomcat server. It consists of a single servlet that handles HTTP requests and responds with a simple "Hello World!" message.
+
+The application is deployed as a WAR file, which is a standard format for Java web applications. The WAR file is then deployed to a Tomcat server using Jenkins, where it can be accessed via a web browser.
+
+The context path of the application is set to `/hello-world`, which means that the application can be accessed at the URL `http://localhost:8080/hello-world`.
+
+---
 
 ## Table of Contents
 
